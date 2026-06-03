@@ -163,6 +163,8 @@ int main() {
 <img width="1912" height="665" alt="image" src="https://github.com/user-attachments/assets/db645d79-2d31-4697-afe2-43870ae55f89" />
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
+
+
 # 19AI304-Fundamentals-of-C-Programming-2025-Odd-M4
 # IAPR-4- Module 4 - FoC
 # Ex.No:18
@@ -321,6 +323,8 @@ int main() {
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
+
+
 # 19AI304-Fundamentals-of-C-Programming-2025-Odd-M4
 # IAPR-4- Module 4 - FoC
 # Ex.No:20
