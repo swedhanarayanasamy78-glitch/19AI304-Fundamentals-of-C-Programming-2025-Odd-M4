@@ -133,11 +133,36 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 13: 
   Stop
 # Program:
+#include <stdio.h>
+
+int max(int a, int b) {
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+
+int min(int a, int b) {
+    if (a < b)
+        return a;
+    else
+        return b;
+}
+
+int main() {
+    int num1, num2;
+
+    scanf("%d %d", &num1, &num2);
+
+    printf("Maximum = %d\n", max(num1, num2));
+    printf("Minimum = %d", min(num1, num2));
+
+    return 0;
+}
 # Output:
+<img width="1912" height="665" alt="image" src="https://github.com/user-attachments/assets/db645d79-2d31-4697-afe2-43870ae55f89" />
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
-
-
 # 19AI304-Fundamentals-of-C-Programming-2025-Odd-M4
 # IAPR-4- Module 4 - FoC
 # Ex.No:18
@@ -181,7 +206,30 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11: 
  Stop
 # Program:
+#include <stdio.h>
+
+float celsiusToFahrenheit(float c) {
+    return (c * 9 / 5) + 32;
+}
+
+float fahrenheitToCelsius(float f) {
+    return (f - 32) * 5 / 9;
+}
+
+int main() {
+    float celsius, fahrenheit;
+
+    scanf("%f", &celsius);
+    scanf("%f", &fahrenheit);
+
+    printf("Celsius to Fahrenheit = %.2f\n", celsiusToFahrenheit(celsius));
+    printf("Fahrenheit to Celsius = %.2f", fahrenheitToCelsius(fahrenheit));
+
+    return 0;
+}
 # Output:
+<img width="1916" height="740" alt="image" src="https://github.com/user-attachments/assets/367e13e4-16db-4453-8c0a-be91af6a16ac" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -229,11 +277,50 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 7: 
   Stop
 # Program:
+#include <stdio.h>
+
+void spiralPrint(int a[4][4], int rows, int cols) {
+    int top = 0, bottom = rows - 1;
+    int left = 0, right = cols - 1;
+    int i;
+
+    while (top <= bottom && left <= right) {
+        for (i = left; i <= right; i++)
+            printf("%d ", a[top][i]);
+        top++;
+        for (i = top; i <= bottom; i++)
+            printf("%d ", a[i][right]);
+        right--;
+        if (top <= bottom) {
+            for (i = right; i >= left; i--)
+                printf("%d ", a[bottom][i]);
+            bottom--;
+        }
+        if (left <= right) {
+            for (i = bottom; i >= top; i--)
+                printf("%d ", a[i][left]);
+            left++;
+        }
+    }
+}
+int main() {
+    int a[4][4];
+    int i, j;
+    printf("Enter 16 elements:\n");
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    printf("Spiral Order: ");
+    spiralPrint(a, 4, 4);
+    return 0;
+}
 # Output:
+<img width="1910" height="855" alt="image" src="https://github.com/user-attachments/assets/fece309b-2e54-4de3-b5b5-6ebc05eb6ecd" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
-
-
 # 19AI304-Fundamentals-of-C-Programming-2025-Odd-M4
 # IAPR-4- Module 4 - FoC
 # Ex.No:20
@@ -264,7 +351,45 @@ To build a C program to convert a string as described above, using a user-define
 ### Step 6: 
  Stop
 # Program:
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void convertString(char str[]) {
+    int i, len = strlen(str);
+
+    if (len > 0) {
+        str[0] = toupper(str[0]);           
+        str[len - 1] = toupper(str[len - 1]); 
+    }
+
+    for (i = 0; i < len; i++) {
+        if (str[i] == ' ') {
+            if (i > 0)
+                str[i - 1] = toupper(str[i - 1]); 
+            if (i < len - 1)
+                str[i + 1] = toupper(str[i + 1]); 
+        }
+    }
+}
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    str[strcspn(str, "\n")] = '\0';
+
+    convertString(str);
+
+    printf("Modified String: %s", str);
+
+    return 0;
+}
 # Output:
+<img width="1906" height="776" alt="image" src="https://github.com/user-attachments/assets/d412767f-9fc4-41df-81df-a3757d74c21c" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
