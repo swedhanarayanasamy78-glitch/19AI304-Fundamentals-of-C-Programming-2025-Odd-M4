@@ -41,10 +41,54 @@
 ### Step 14: 
   Stop
 # Program:
-# Output:
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
+#include <stdio.h>
 
+int main() {
+    int day, month, year, valid = 1;
+
+    scanf("%d/%d/%d", &day, &month, &year);
+
+    if (year < 1)
+        valid = 0;
+    else if (month < 1 || month > 12)
+        valid = 0;
+    else {
+        int days;
+
+        switch (month) {
+            case 1: case 3: case 5: case 7:
+            case 8: case 10: case 12:
+                days = 31;
+                break;
+
+            case 4: case 6: case 9: case 11:
+                days = 30;
+                break;
+
+            case 2:
+                if ((year % 400 == 0) ||
+                    (year % 4 == 0 && year % 100 != 0))
+                    days = 29;   // Leap year
+                else
+                    days = 28;
+                break;
+        }
+
+        if (day < 1 || day > days)
+            valid = 0;
+    }
+
+    if (valid)
+        printf("Valid Date");
+    else
+        printf("Invalid Date");
+
+    return 0;
+}
+# Output:
+<img width="1915" height="882" alt="image" src="https://github.com/user-attachments/assets/ddc5e02f-9700-4624-ab9e-232b6521c341" />
+# Result:
+Thus, the program was implemented and executed successfully, and the required output was obtained.
 
 # 19AI304-Fundamentals-of-C-Programming-2025-Odd-M4
 # IAPR-4- Module 4 - FoC
