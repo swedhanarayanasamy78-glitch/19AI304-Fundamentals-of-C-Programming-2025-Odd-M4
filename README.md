@@ -42,7 +42,6 @@
   Stop
 # Program:
 #include <stdio.h>
-
 int main() {
     int day, month, year, valid = 1;
 
